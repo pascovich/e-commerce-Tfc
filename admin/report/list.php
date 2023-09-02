@@ -117,21 +117,21 @@
 <div class="row">
 <span id="printout">
 	<div class="col-md-12" >
-	<div class="page-header" style="text-align:center;" ><h1>List of Ordered Products</h1>
-		<div>Inclusive Dates: From : <?php echo isset($_POST['date_pickerfrom']) ? $_POST['date_pickerfrom'] :'';?> - To : <?php echo isset($_POST['date_pickerto']) ? $_POST['date_pickerto'] : '';?> </div>
+	<div class="page-header" style="text-align:center;" ><h1>Liste des produits commandés</h1>
+		<div>Dates inclusives: À partir de : <?php echo isset($_POST['date_pickerfrom']) ? $_POST['date_pickerfrom'] :'';?> - A : <?php echo isset($_POST['date_pickerto']) ? $_POST['date_pickerto'] : '';?> </div>
 	</div>
 		 
 <form class="" method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
 		<table class="table table-bordered table-hover" align="center" cellspacing="10px">
 		<thead>
 			<tr bgcolor="skyblue" style="font-weight: bold;"> 
-				<td >Date Ordered</td>  
+				<td >Date commande</td>  
 				<!-- <td >Customer</td> -->
-				<td >Product</td>
-				<td >Original Price</td>
-				<td >Price</td>
-				<td >Quantity</td> 
-				<td >Sub-total</td>
+				<td >Produit</td>
+				<td >Prix original</td>
+				<td >Prix</td>
+				<td >Quantite</td> 
+				<td >Sous-total</td>
 			</tr>
 
 		</thead>
@@ -188,11 +188,11 @@ AND DATE(ORDEREDDATE) <= '". date_format(date_create($_POST['date_pickerto']),'Y
 			$totQty +=$result->QTY;				 
  			$totAmount += $AMOUNT;
 								} }else{
-									echo '<tr><td colspan="7" align="center"><h2>Please Enter Then Dates</h2></td></tr>';
+									echo '<tr><td colspan="7" align="center"><h2>Veuillez saisir les dates</h2></td></tr>';
 								}
  
 	}else{
-			echo '<tr><td colspan="7" align="center"><h2>Please Enter Then Dates</h2></td></tr>';
+			echo '<tr><td colspan="7" align="center"><h2>Veuillez saisir  les dates</h2></td></tr>';
 
 	}
 		 
@@ -215,7 +215,7 @@ AND DATE(ORDEREDDATE) <= '". date_format(date_create($_POST['date_pickerto']),'Y
 	<div class="row">
 		<div class="col-md-12">
 			<div class="col-md-2"> 	
-			<button onclick="tablePrint();" class="btn btn-primary"><i class="fa fa-print"></i> Print Report</button>
+			<button onclick="tablePrint();" class="btn btn-primary"><i class="fa fa-print"></i>Imprimer rapport</button>
  		</div>
 	  </div>
 	</div>

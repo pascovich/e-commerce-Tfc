@@ -26,17 +26,17 @@
  
 <form  method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
 <span id="printout">
-<div class="row" ><h3 align="center">Overall Income in <?php echo ((@$_POST['start']) ? $_POST['start'] : '') . ' to ' .  ((@$_POST['end']) ? $_POST['end'] : '');?></h3></div>
+<div class="row" ><h3 align="center">Revenu global en <?php echo ((@$_POST['start']) ? $_POST['start'] : '') . ' to ' .  ((@$_POST['end']) ? $_POST['end'] : '');?></h3></div>
 <table  class="table table-bordered" cellspacing="0">
 <thead>
 <tr bgcolor="#bbd43b">
-<td ><strong>Name</strong></td>
-<td ><strong>Order Number</strong></td>
-<td ><strong>Date Ordered</strong></td>
+<td ><strong>Nom</strong></td>
+<td ><strong>Num commande</strong></td>
+<td ><strong>Date Commande</strong></td>
 <!-- <td ><strong>Date Claimed</strong></td>  -->
-<td ><strong>Payment Method</strong></td> 
+<td ><strong>Methode de paiement</strong></td> 
 <!-- <td ><strong>Quantity</strong></td> -->
-<td ><strong>Total Price</strong></td>
+<td ><strong>Total Prix</strong></td>
 </tr>
 </thead>
 <tbody>		
@@ -85,12 +85,12 @@ if(isset($_POST['submit'])){
 </table>
 <table>
 	<tfoot style="margin-right:10%">
-<tr> <h4 align="right"> Overall Price : &#8369 <?php echo isset( $overall) ? $overall : 0; ?></h4>  </tr>
+<tr> <h4 align="right"> Prix global: ($) <?php echo isset( $overall) ? $overall : 0; ?></h4>  </tr>
 	
 </tfoot>
 </table>
 </span>
-<button onclick="tablePrint();" class="btn btn_fixnmix"><span class="glyphicon glyphicon-print"></span> Print Report</button>
+<button onclick="tablePrint();" class="btn btn_fixnmix"><span class="glyphicon glyphicon-print"></span>Imprimer rapport</button>
  
 </form>
 </div>

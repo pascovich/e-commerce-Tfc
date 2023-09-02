@@ -56,7 +56,7 @@ function doInsert(){
 
 
 		if ( $errofile > 0) {
-				message("No Image Selected!", "error");
+				message("Aucune image sélectionnée!", "error");
 				redirect("index.php?view=add");
 		}else{
 	 
@@ -66,7 +66,7 @@ function doInsert(){
 				@$image_size= getimagesize($_FILES['image']['tmp_name']);
 
 			if ($image_size==FALSE || $type=='video/wmv') {
-				message("Uploaded file is not an image!", "error");
+				message("Le fichier téléchargé n’est pas une image!", "error");
 				redirect("index.php?view=add");
 			}else{
 					//uploading the file
@@ -74,7 +74,7 @@ function doInsert(){
 		 	
 					if ($_POST['PRODUCTNAME'] == "" OR $_POST['QTY'] == "" OR $_POST['PRICE'] == "") {
 					$messageStats = false;
-					message("All fields are required!","error");
+					message("Tous les champs sont obligatoires!","error");
 					redirect('index.php?view=add');
 					}else{	
 
@@ -85,7 +85,7 @@ function doInsert(){
 						
 						
 						if ($res >=1) {
-							message("Product name is already exist!", "error");
+							message("Le nom du produit existe déjà!", "error");
 							redirect("index.php?view=add");
 						}else{
 
@@ -100,7 +100,7 @@ function doInsert(){
 						$product->DESCRIPTION		= $_POST['DESCRIPTION'];
 						$product->create();
 
-						message("New [". $_POST['PRODUCTNAME'] ."] created successfully!", "success");
+						message("New [". $_POST['PRODUCTNAME'] ."] créé avec succès!", "success");
 						redirect("index.php");
 						}
 							
@@ -120,19 +120,19 @@ function doInsert(){
 		if ($_GET['actions']=='confirm') {
 							# code...
 				$status	= 'Confirmed';	
-				$remarks ='Your order has been confirmed.';
+				$remarks ='Votre commande a été confirmée.';
 				$delivered = Date('Y-m-d');
 
 		}elseif ($_GET['actions']=='deliver') {
 							# code...
 				$status	= 'Delivered';	
-				$remarks ='Your order has been delivered.';
+				$remarks ='Votre commande a été livrée.';
 				$delivered = Date('Y-m-d');
 				 
 		}elseif ($_GET['actions']=='cancel'){
 			// $order = New Order();
 				$status	= 'Cancelled';
-				$remarks ='Your order has been cancelled due to lack of communication and incomplete information.';
+				$remarks ='Votre commande a été annulée en raison d’un manque de communication et d’informations incomplètes.';
 		}
 			
 			$order = New Order();
@@ -178,7 +178,7 @@ function doInsert(){
 			}
       
 
-			message("Order has been ".$summary->ORDEREDSTATS."!", "success");
+			message("La commande a été ".$summary->ORDEREDSTATS."!", "success");
 			redirect("index.php");
 		
 	}
@@ -186,7 +186,7 @@ function doInsert(){
 	function doDelete(){
 
 	if (isset($_POST['selector'])==''){
-		message("Select the records first before you delete!","info");
+		message("Sélectionnez d’abord les enregistrements avant de les supprimer.!","info");
 		redirect('index.php');
 	}else{
 
@@ -201,7 +201,7 @@ function doInsert(){
 			$payment = New Payment();
 			$payment->delete($id[$i]);
 
-			message("Product has been Deleted!","info");
+			message("Le produit a été supprimé!","info");
 			redirect('index.php?view=add');
 		}
 
@@ -217,7 +217,7 @@ function cartInsert(){
 
       addtocart($pid,1,$price);
 
-			message("1 item has been added in the cart", "success");
+			message("1 L’article a été ajouté dans le panier", "success");
 			redirect("index.php?view=add");
 			
 		}
@@ -247,7 +247,7 @@ function cartInsert(){
      
     }
  
-			message("Cart has been updated.", "success");
+			message("Le panier a été mis à jour.", "success");
 			redirect("index.php?view=add");
   
 	}
@@ -263,7 +263,7 @@ function cartInsert(){
 		}
 			
 
-		message("1 item has been removed in the cart.");
+		message("1 article a été supprimé dans le panier.");
 		 redirect('index.php?view=addtocart');
 		 
 
@@ -283,7 +283,7 @@ function cartInsert(){
 			$order->O_PRICE			= $_SESSION['fixnmix_cart'][$i]['price'];
 			$order->ORDERTYPE 		=$_SESSION['paymethod'];
 			$order->DATECLAIM		= date("Y-m-d h:i:s");
-			$order->STATS 			= 'Confirmed';			
+			$order->STATS 			= 'Confirmer';			
 			$order->ORDERNUMBER		= $_SESSION['ORDERNUMBER'];
 			$order->CUSTOMERID		=   $_SESSION['CUSTOMERID'] ;
 		  	$order->create(); 
@@ -301,7 +301,7 @@ function cartInsert(){
 		  $payment->PAYMENTMETHOD		= $_SESSION['paymethod'];
 		  $payment->CLAIMDATE			= date("Y-m-d h:i:s");	
 		  $payment->TOTALPRICE			=   $_SESSION['alltot'];	
-		  $payment->STATS 				= 'Confirmed';
+		  $payment->STATS 				= 'Confirmer';
 		  $payment->REMARKS 			= '';
 		  $payment->create();
 
@@ -325,7 +325,7 @@ function cartInsert(){
 			$user->NAME				=	$_SESSION['FIRSTNAME']. ' ' .$_SESSION['LASTNAME'];
 			$user->UEMAIL			=	 $_SESSION['CUSTOMERID'];
 			$user->PASS				=	sha1(1234);						
-			$user->TYPE				=	'Customer';
+			$user->TYPE				=	'Client';
 			$user->create();
 
 			$autonum = New Autonumber(); 
@@ -342,7 +342,7 @@ function cartInsert(){
 			// unset($_SESSION['paymethod']) ;
 			// unset($_SESSION['ORDERNUMBER']);
  		// 	unset($_SESSION['alltot']);
-			message("New order created successfully!", "success"); 		 
+			message("Nouvelle commande créée avec succès!", "success"); 		 
 			redirect("index.php?view=billing");
 
 	}

@@ -116,7 +116,7 @@ $singlecustomer = $customer->single_customer($customerid);
     <div class="container">
       <div class="heading">
         <h3>Qu’aimeriez-vous faire ensuite?</h3>
-        <p>Choisissez si vous avez un code de réduction ou des points de récompense que vous souhaitez utiliser ou si vous souhaitez estimer vos frais de livraison.</p>
+        <!-- <p>Choisissez si vous avez un code de réduction ou des points de récompense que vous souhaitez utiliser ou si vous souhaitez estimer vos frais de livraison.</p> -->
       </div>
       <div class="row">
          <div class="row">
@@ -125,7 +125,7 @@ $singlecustomer = $customer->single_customer($customerid);
                   <label> Methode de paiement : </label> 
                   <div class="radio" >
                       <label >
-                          <input type="radio"  class="paymethod" name="paymethod" id="deliveryfee" value="Cash on Delivery" checked="true" data-toggle="collapse"  data-parent="#accordion" data-target="#collapseOne" >Cash on Delivery 
+                          <input type="radio"  class="paymethod" name="paymethod" id="deliveryfee" value="Presentiel" checked="true" data-toggle="collapse"  data-parent="#accordion" data-target="#collapseOne" >Cash au presentiel 
                         
                       </label>
                   </div> 
@@ -142,7 +142,7 @@ $singlecustomer = $customer->single_customer($customerid);
 
                                           <div class="col-md-8">
                                            <select class="form-control paymethod" name="PLACE" id="PLACE" onchange="validatedate()"> 
-                                           <option value="0" >Selecte</option>
+                                           <option value="0" >Select</option>
                                               <?php 
                                             $query = "SELECT * FROM `tblsetting` ";
                                             $mydb->setQuery($query);
@@ -171,10 +171,10 @@ $singlecustomer = $customer->single_customer($customerid);
 <br/>
               <div class="row">
                 <div class="col-md-6">
-                    <a href="index.php?q=cart" class="btn btn-default pull-left"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<strong>View Cart</strong></a>
+                    <a href="index.php?q=cart" class="btn btn-default pull-left"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<strong>Voir pagnet</strong></a>
                    </div>
                   <div class="col-md-6">
-                      <button type="submit" class="btn btn-pup  pull-right " name="btn" id="btn" onclick="return validatedate();"   /> Submit Order <span class="glyphicon glyphicon-chevron-right"></span></button> 
+                      <button type="submit" class="btn btn-pup  pull-right " name="btn" id="btn" onclick="return validatedate();"   /> Soumettre commande <span class="glyphicon glyphicon-chevron-right"></span></button> 
                 </div>  
               </div>
              

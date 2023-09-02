@@ -30,14 +30,14 @@ switch ($action) {
 
 		if ( $_POST['CATEGORY'] == "" ) {
 			$messageStats = false;
-			message("All field is required!","error");
+			message("Tous les champs sont obligatoires!","error");
 			redirect('index.php?view=add');
 		}else{	
 			$category = New Category();
 			$category->CATEGORIES	= $_POST['CATEGORY'];
 			$category->create();
 
-			message("New [". $_POST['CATEGORY'] ."] created successfully!", "success");
+			message("New [". $_POST['CATEGORY'] ."] créé avec succès!", "success");
 			redirect("index.php");
 			
 		}
@@ -52,7 +52,7 @@ switch ($action) {
 			$category->CATEGORIES	= $_POST['CATEGORY'];
 			$category->update($_POST['CATEGID']);
 
-			message("[". $_POST['CATEGORY'] ."] has been updated!", "success");
+			message("[". $_POST['CATEGORY'] ."] a été mis à jour!", "success");
 			redirect("index.php");
 		}
 
@@ -70,7 +70,7 @@ switch ($action) {
 			$category = New Category();
 			$category->delete($id);
 
-			message("Category already Deleted!","info");
+			message("Catégorie déjà supprimée!","info");
 			redirect('index.php');
 
 		// $id = $_POST['selector'];

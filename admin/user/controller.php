@@ -32,7 +32,7 @@ switch ($action) {
 
 		if ($_POST['U_NAME'] == "" OR $_POST['U_USERNAME'] == "" OR $_POST['U_PASS'] == "") {
 			$messageStats = false;
-			message("All field is required!","error");
+			message("All field sont obligatoires!","error");
 			redirect('index.php?view=add');
 		}else{	
 			$user = New User();
@@ -46,7 +46,7 @@ switch ($action) {
 						// $autonum = New Autonumber(); 
 						// $autonum->auto_update(2);
 
-			message("New [". $_POST['U_NAME'] ."] created successfully!", "success");
+			message("Nouvel [". $_POST['U_NAME'] ."] creer avec success!", "success");
 			redirect("index.php");
 			
 		}
@@ -64,7 +64,7 @@ switch ($action) {
 			$user->U_ROLE			= $_POST['U_ROLE'];
 			$user->update($_POST['USERID']);
 
-			  message("[". $_POST['U_NAME'] ."] has been updated!", "success");
+			  message("[". $_POST['U_NAME'] ."] a été mis à jour!", "success");
 			redirect("index.php");
 		}
 	}
@@ -91,7 +91,7 @@ switch ($action) {
 				$user = New User();
 	 		 	$user->delete($id);
 			 
-			message("User already Deleted!","info");
+			message("User  Deleted!","info");
 			redirect('index.php');
 		// }
 		// }
@@ -119,7 +119,7 @@ switch ($action) {
 				@$image_size= getimagesize($_FILES['photo']['tmp_name']);
 
 			if ($image_size==FALSE ) {
-				message("Uploaded file is not an image!", "error");
+				message("Le fichier téléchargé n’est pas une image!", "error");
 				redirect("index.php?view=view&id=". $_GET['id']);
 			}else{
 					//uploading the file

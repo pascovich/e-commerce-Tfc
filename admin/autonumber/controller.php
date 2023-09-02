@@ -30,7 +30,7 @@ switch ($action) {
 
 		if ( $_POST['AUTOSTART'] == "" ) {
 			$messageStats = false;
-			message("All field is required!","error");
+			message("remplissez les champs !","error");
 			redirect('index.php?view=add');
 		}else{	
 			$autonumber = New Autonumber();
@@ -40,7 +40,7 @@ switch ($action) {
 			$autonumber->AUTOKEY	= $_POST['AUTOKEY'];
 			$autonumber->create();
 
-			message("New Autonumber created successfully!", "success");
+			message("Nouveau numéro automatique créé avec succès!", "success");
 			redirect("index.php");
 			
 		}
@@ -58,7 +58,7 @@ switch ($action) {
 			// $autonumber->AUTOKEY	= $_POST['AUTOKEY'];
 			$autonumber->update($_POST['AUTOKEY']);
 
-			message(" Autonumber has been updated!", "success");
+			message(" Nouveau numéro automatique modifier avec succès !", "success");
 			redirect("index.php");
 		}
 
@@ -76,7 +76,7 @@ switch ($action) {
 			$autonumber = New Autonumber();
 			$autonumber->delete($id);
 
-			message("autonumber already Deleted!","info");
+			message("numéro automatique déjà supprimé!","info");
 			redirect('index.php');
 
 		// $id = $_POST['selector'];

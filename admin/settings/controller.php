@@ -71,7 +71,7 @@ function doInsert(){
 						$product->update($_POST['SETTINGID']);
   
 
-			message("Location has been updated!", "success");
+			message("L’emplacement a été mis à jour!", "success");
 			redirect("index.php");
 	  }
 	redirect("index.php"); 
@@ -119,7 +119,7 @@ function doInsert(){
 		$promo->PROBANNER  =1;    
 		$promo->update($_POST['PROID']);
 
-		msgBox("Discount has been set.");
+		msgBox("La remise a été fixée.");
 
 		redirect("index.php"); 
  		}
