@@ -3,7 +3,7 @@
       <div class="breadcrumbs">
         <ol class="breadcrumb">
           <li><a href="#">Home</a></li>
-          <li class="active">Shopping Cart</li>
+          <li class="active">Pagnet</li>
         </ol>
       </div>
       <div class="table-responsive cart_info"> 
@@ -18,10 +18,10 @@ check_message();
                          <table  class="table table-condensed" id="table" >
                          <thead> 
                           <tr class="cart_menu"> 
-                             <td  >Product</td>
+                             <td  >Produit</td>
                              <td >Description</td>
-                             <td  width="15%" >Price</td>
-                             <td  width="15%" >Quantity</td> 
+                             <td  width="15%" >Prix</td>
+                             <td  width="15%" >Quantite</td> 
                              <td  width="15%" >Total</td>  
                           </tr>
                          </thead>  
@@ -56,11 +56,11 @@ check_message();
                                               
                                             if (isset($_SESSION['CUSID'])){  
 
-                                              echo ' <a href="'.web_root. 'customer/controller.php?action=addwish&proid='.$result->PROID.'" title="Add to wishlist">Add to wishlist</a>
+                                              echo ' <a href="'.web_root. 'customer/controller.php?action=addwish&proid='.$result->PROID.'" title="Add to wishlist">Ajouter au wishlist</a>
              ';
                                            
                                              }else{
-                                               echo   '<a href="#" title="Add to wishlist" class="proid"  data-target="#smyModal" data-toggle="modal" data-id="'.  $result->PROID.'">Add to wishlist</a>
+                                               echo   '<a href="#" title="Add to wishlist" class="proid"  data-target="#smyModal" data-toggle="modal" data-id="'.  $result->PROID.'">Ajouter au wishlist</a>
              ';
                                             } 
                                   
@@ -79,7 +79,7 @@ check_message();
                                   <td>
                                     <input type="hidden"    id ="PROPRICE<?php echo $result->PROID;  ?>" name="PROPRICE<?php echo $result->PROID; ?>" value="<?php echo  $result->PRODISPRICE ; ?>" >
                                      
-                                  &#8369  <?php echo  $result->PRODISPRICE ; ?>
+                                  $  <?php echo  $result->PRODISPRICE ; ?>
                                   </td>
                                   <td class="input-group custom-search-form" >
                                        <input type="hidden" maxlength="3" class="form-control input-sm"  autocomplete="off"  id ="ORIGQTY<?php echo $result->PROID;  ?>" name="ORIGQTY<?php echo $result->PROID; ?>" value="<?php echo $result->PROQTY; ?>"   placeholder="Search for...">
@@ -94,21 +94,21 @@ check_message();
                                       
                                         <input type="hidden"    id ="TOT<?php echo $result->PROID;  ?>" name="TOT<?php echo $result->PROID; ?>" value="<?php echo  $result->PRODISPRICE ; ?>" >
                                    
-                                     <td> &#8369 <output id="Osubtot<?php echo $result->PROID ?>"><?php echo   $_SESSION['gcCart'][$i]['price'] ; ?></output></td>
+                                     <td> $ <output id="Osubtot<?php echo $result->PROID ?>"><?php echo   $_SESSION['gcCart'][$i]['price'] ; ?></output></td>
                                 </tr>
          
                             <?php  
                                  }
                                }
                                }else{ 
-                                  echo "<h1>There is no item in the cart.</h1>";
+                                  echo "<h1>Il y a rien dans le pagnet jusque-la.</h1>";
                                } 
                             ?>  
                                 
                       </table> 
 
      
-                        <h3 align="right"> Total  &#8369<span id="sum">0</span></h3> 
+                        <h3 align="right"> Total  $<span id="sum">0</span></h3> 
     </div>
   </div>  
  
@@ -116,14 +116,14 @@ check_message();
 <section id="do_action">
     <div class="container">
       <div class="heading">
-        <h3>What would you like to do next?</h3>
-        <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
+        <h3>Qu’aimeriez-vous faire ensuite?</h3>
+        <p>Choisissez si vous avez un code de réduction ou des points de récompense que vous souhaitez utiliser ou si vous souhaitez estimer vos frais de livraison.</p>
       </div>
       <div class="row">
      <form action="index.php?q=orderdetails" method="post">
    <a href="index.php?q=product" class="btn btn-default check_out pull-left ">
    <i class="fa fa-arrow-left fa-fw"></i>
-   Add New Order
+    Ajouter nouvelle commande
    </a>
 
      <?php    
@@ -134,13 +134,13 @@ check_message();
                   if (isset($_SESSION['CUSID'])){  
                
                     echo '<button type="submit"  name="proceed" id="proceed" class="btn btn-default check_out btn-pup pull-right">
-                            Proceed And Checkout
+                              Procéder et passer à la caisse
                             <i class="fa  fa-arrow-right fa-fw"></i>
                             </button>';
                  
                    }else{
                      echo   '<a data-target="#smyModal" data-toggle="modal" class="btn btn-default check_out signup pull-right" href="">
-                              Proceed And Checkout
+                                Procéder et passer à la caisse
                               <i class="fa  fa-arrow-right fa-fw"></i>
                               </a>';
                   } 

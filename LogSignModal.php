@@ -23,7 +23,7 @@
                       <!-- <h4>Login Tab</h4>  -->
                        <div class="panel panel-pup">
                         <div class="panel-heading">
-                            Login Details
+                            Details Login
                         </div>
                         <div class="panel-body">
 
@@ -70,7 +70,7 @@
 
                        </div>
                         <div class="panel-footer">
-                             <p align="left">&copy; <a href="https://bit.ly/2LPn9Wu">Janobe Source Code</a></p>
+                             <p align="left">&copy; <a href="https://bit.ly/2LPn9Wu">Fahamu de dieu</a></p>
                         </div>
                     </div> 
                   </div>
@@ -83,14 +83,14 @@
                            <form  class="form-horizontal span6" action="customer/controller.php?action=add" onsubmit="return personalInfo();" name="personal" method="POST" enctype="multipart/form-data">
                                 <div class="panel panel-pup">
                                     <div class="panel-heading">
-                                       Customer Details
+                                       Details client
                                     </div>
                                      <div class="panel-body">
                                       <input class="proid" type="hidden" name="proid" id="proid" value="">
                                       <div class="form-group">
                                         <div class="col-md-10">
                                           <label class="col-md-4 control-label" for=
-                                          "FNAME">First Name:</label>
+                                          "FNAME">Nom:</label>
                                           <!-- <input  id="CUSTOMERID" name="CUSTOMERID"  type="HIDDEN" value="<?php echo $res->AUTO; ?>">  -->
                                           <div class="col-md-8">
                                              <input class="form-control input-sm" id="FNAME" name="FNAME" placeholder=
@@ -102,7 +102,7 @@
                                       <div class="form-group">
                                         <div class="col-md-10">
                                           <label class="col-md-4 control-label" for=
-                                          "LNAME">Last Name:</label>
+                                          "LNAME">PostNom:</label>
 
                                           <div class="col-md-8">
                                              <input class="form-control input-sm" id="LNAME" name="LNAME" placeholder=
@@ -114,13 +114,13 @@
                                        <div class="form-group">
                                         <div class="col-md-10">
                                           <label class="col-md-4 control-label" for=
-                                          "GENDER">Gender:</label>
+                                          "GENDER">Sexe:</label>
 
                                           <div class="col-md-8">
                                             <input  id="GENDER" name="GENDER" placeholder=
-                                                "Gender" type="radio" checked="true" value="Male"><b> Male </b>
+                                                "Gender" type="radio" checked="true" value="Male"><b> Homme </b>
                                                 <input   id="GENDER" name="GENDER" placeholder=
-                                                "Gender" type="radio" value="Female"> <b> Female </b>
+                                                "Gender" type="radio" value="Female"> <b> Femme </b>
                                           </div>
                                         </div>
                                       </div>
@@ -128,7 +128,7 @@
                                        <div class="form-group">
                                             <div class="col-md-10">
                                               <label class="col-md-4 control-label" for=
-                                              "CITYADD">Municipality/City:</label>
+                                              "CITYADD">Ville:</label>
 
                                               <div class="col-md-8">
                                                  <input class="form-control input-sm" id="CITYADD" name="CITYADD" placeholder=
@@ -169,7 +169,7 @@
 
                                           <div class="col-md-8">
                                           <p>Note</p>
-                                            Password must be atleast 8 to 15 characters. Only letter, numeric digits, underscore and first character must be a letter.
+                                          Le mot de passe doit comporter au moins 8 à 15 caractères. Seuls les lettres, les chiffres numériques, les traits de soulignement et le premier caractère doivent être une lettre.
                                          </div> 
                                         </div>
                                       </div> 
@@ -177,11 +177,11 @@
                                       <div class="form-group">
                                         <div class="col-md-10">
                                           <label class="col-md-4 control-label" for=
-                                          "PHONE">Contact Number:</label>
+                                          "PHONE">Telephone :</label>
 
                                           <div class="col-md-8">
                                              <input class="form-control input-sm" id="PHONE" name="PHONE" placeholder=
-                                                "+63 0000000000" type="number" value="">
+                                                "+243 0000000000" type="number" value="">
                                           </div>
                                         </div>
                                       </div>
@@ -194,7 +194,7 @@
                                           "image"></label>
                                           <div class="col-md-8">
                                         <p>  I <input type="checkbox" id="conditionterms" name="conditionterms" value="checkbox" />
-                                           <small>Agree with the <a class="toggle-modal"  onclick=" OpenPopupCenter('terms.php','Terms And Codition','600','600')"  ><b>TERMS AND CONDITION</b></a> of Janobe Source Code.</small>
+                                           <small>Agree with the <a class="toggle-modal"  onclick=" OpenPopupCenter('terms.php','Terms And Codition','600','600')"  ><b>TERMS AND CONDITION</b></a> of E-command.</small>
                                            
                                           </div>
                                         </div>
@@ -216,7 +216,7 @@
 
                                      </div>
                                     <div class="panel-footer">
-                                        <p align="left">&copy; <a href="https://bit.ly/2LPn9Wu">Janobe Source Code</a></p>
+                                        <p align="left">&copy; <a href="https://bit.ly/2LPn9Wu">Fahamu de Dieu</a></p>
                                     </div> 
                             </div> 
                             <!-- end panel sign up -->

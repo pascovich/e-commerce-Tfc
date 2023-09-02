@@ -28,8 +28,8 @@
           
          
             <!-- <li class="list-group-item text-muted">Profile</li> -->
-             <li class="list-group-item text-right"><span class="pull-left"><strong>Real name</strong></span> <?php echo $singlecustomer->FNAME .' '.$singlecustomer->LNAME; ?> </li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span><?php echo date_format(date_create($singlecustomer->DATEJOIN),'M. d, y');?></li>
+             <li class="list-group-item text-right"><span class="pull-left"><strong>Nom complet</strong></span> <?php echo $singlecustomer->FNAME .' '.$singlecustomer->LNAME; ?> </li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Joindre</strong></span><?php echo date_format(date_create($singlecustomer->DATEJOIN),'M. d, y');?></li>
             <!-- <li class="list-group-item text-right"><span class="pull-left"><strong>Last seen</strong></span> Yesterday</li> -->
            
             
@@ -43,7 +43,7 @@
 
 <div class="panel">  
 <div class="panel-header">
-  <h2>Tracking Order <SMALL><a href="<?php echo web_root; ?>index.php?q=profile" class="btn btn-sm btn-primary"><i class="fa  fa-chevron-left"></i> Back</a></SMALL></h2>
+  <h2>Suivi de commande <SMALL><a href="<?php echo web_root; ?>index.php?q=profile" class="btn btn-sm btn-primary"><i class="fa  fa-chevron-left"></i> Back</a></SMALL></h2>
 </div>          
   <div class="panel-body">
 
@@ -53,11 +53,11 @@
                     <table id="" class="table"  style="font-size:12px" cellspacing="0"  > 
                       <thead>
                         <tr> 
-                          <th align="center">Processing</th>
+                          <th align="center">Traitement</th>
                           <th></th>  
-                          <th>Shipping</th>  
+                          <th>Livraison</th>  
                            <th></th> 
-                          <th >Delivered</th> 
+                          <th >Livré</th> 
                         </tr> 
                       </thead>   
                     <tbody>

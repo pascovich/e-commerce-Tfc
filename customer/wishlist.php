@@ -26,12 +26,12 @@
                           <?php
                             if ($result->PRODISCOUNT>0){
                            ?>
-                            <p><h5>Discount : <?php echo  $result->PRODISCOUNT; ?></h5></p>
-                            <p><h5>Discounted Price :<?php echo  $result->PRODISPRICE; ?></h5></p> 
+                            <p><h5>Remise : <?php echo  $result->PRODISCOUNT; ?></h5></p>
+                            <p><h5>Prix remis :<?php echo  $result->PRODISPRICE; ?></h5></p> 
                           <?php } ?>
                         <input type="hidden" name="PROPRICE" value="<?php  echo $result->PRODISPRICE; ?>">
                         <input type="hidden" name="PROID" value="<?php  echo $result->PROID; ?>">
-                       <button  type="submit"  class="btn btn-primary btn-sm"  name="btnorder">Order Now!</button>
+                       <button  type="submit"  class="btn btn-primary btn-sm"  name="btnorder">Commander Now!</button>
                          <a href="<?php echo web_root ; ?>customer/controller.php?action=wishlist&wishid=<?php echo $result->WISHID; ?>"    class="btn btn-info btn-sm "  data-toggle="lightbox"  >
                                  <i class="fa fa-trash-o fa-fw"  data-toggle="tooltip" data-placement="left" title="Remove"></i>  
                                  </a>

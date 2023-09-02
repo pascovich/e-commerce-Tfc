@@ -44,15 +44,15 @@ require_once("include/initialize.php");
                     <ul>
                       <!-- <li>Model - <?php echo $cur->PROMODEL; ?></li> -->
                       <li>Type - <?php echo $cur->PRODESC; ?></li>
-                      <li>Price - &#8369 <?php echo $cur->PROPRICE; ?></li>
+                      <li>Prix - $ <?php echo $cur->PROPRICE; ?></li>
                        <?php if($cur->PRODISCOUNT>0){ ?>
-                        <li>Discount - <?php echo $cur->PRODISCOUNT; ?> % </li> 
+                        <li>Remise - <?php echo $cur->PRODISCOUNT; ?> % </li> 
 
-                        <li>Discounted Price - &#8369 <?php echo $cur->PRODISPRICE; ?> </li> 
+                        <li>Prix reduit - $ <?php echo $cur->PRODISPRICE; ?> </li> 
                         <?php } ?>
-                      <li>Available Quantity - <?php echo $cur->PROQTY; ?></li>
+                      <li>Quantite disponible - <?php echo $cur->PROQTY; ?></li>
                     </ul> 
-                    <button class="btn btn-pup"  name="btnorder" type="Submit">Order Now!</button> 
+                    <button class="btn btn-pup"  name="btnorder" type="Submit"> Commander!</button> 
                     <button class="btn btn-default" id="btn_close" data-dismiss="modal" type="button">Close</button> 
 
                 </div>

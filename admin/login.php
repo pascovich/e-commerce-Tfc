@@ -40,7 +40,7 @@ require_once("../include/initialize.php");
 			<div class="wrap-login100">
 				<form method="post" action=""  class="login100-form validate-form" >
 					<div class="login100-form-avatar">
-						<img src="images/youtube pic copy.jpg" alt="AVATAR">
+						<img src="images/jibu.jfif" alt="AVATAR">
 					</div>
 
 					<span class="login100-form-title p-t-20 p-b-45">

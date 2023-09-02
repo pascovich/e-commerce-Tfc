@@ -34,11 +34,11 @@
             <ul class="list-group">
             <!-- <li class="list-group-item text-muted">Profile</li> -->
                 <li class="list-group-item text-right"><span class=
-                "pull-left"><strong>Real name</strong></span>
+                "pull-left"><strong>Nom Complet</strong></span>
                 <?php echo $res->FNAME .' '.$res->LNAME; ?></li>
                 <li class="list-group-item text-right"> 
                 <div class="panel-group" id="accordion">   
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"  >Change Password</a>
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"  >Changer Password</a>
                   <div id="collapseTwo" class="panel-collapse collapse">
                     <div class="panel-body">
                         <form action="<?php echo web_root; ?>customer/controller.php?action=changepassword" method="POST"> 
@@ -57,14 +57,14 @@
             <div class="panel-body">
                 <ul class="nav nav-tabs" id="myTab">
                     <li class="active">
-                        <a data-toggle="tab" href="#home">List of Orders</a>
+                        <a data-toggle="tab" href="#home">Liste des commandes</a>
                     </li> 
                     <li>
                         <a data-toggle="tab" href="#settings">Update
-                        Account</a>
+                        Compte</a>
                     </li>
                     <li>
-                        <a data-toggle="tab" href="#wishlist">WishList</a>
+                        <a data-toggle="tab" href="#wishlist">Liste des souhaits</a>
                     </li>
                 </ul>
                 <div class="tab-content">
@@ -83,12 +83,12 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Order#</th>
-                                            <th>Date Oredered</th>
-                                            <th>TotalPrice</th>
-                                            <th>PaymentMethod</th>
+                                            <th>Commande#</th>
+                                            <th>Date commande</th>
+                                            <th>Total Prix</th>
+                                            <th>Methode de paiement</th>
                                             <th>Status</th>
-                                            <th width="150px">Remarks</th>
+                                            <th width="150px">Remarque</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -113,7 +113,7 @@
                                             <!-- <a href="#"  title="View list Of ordered products"  class="orderid   "  data-target="#myOrdered" data-toggle="modal" data-id="<?php echo  $result->ORDEREDNUM; ?>"><i class="fa fa-info-circle fa-fw"></i><?php echo  $result->ORDEREDNUM; ?></a> --></td>
                                             <td>
                                             <?php echo date_format(date_create($result->ORDEREDDATE),"M/d/Y h:i:s") ; ?></td>
-                                            <td>&#8369
+                                            <td>$
                                             <?php echo  $result->PAYMENT; ?></td>
                                             <td>
                                             <?php echo  $result->PAYMENTMETHOD; ?></td>
@@ -135,7 +135,7 @@
                                                 data-placement="left"
                                                 data-toggle="tooltip" title=
                                                 "View Order"></i> <span class=
-                                                "tooltip tooltip.top">view</span></a>
+                                                "tooltip tooltip.top">voir</span></a>
                                             
                                             </td>
                                         </tr><?php

@@ -25,7 +25,7 @@ $singlecustomer = $customer->single_customer($customerid);
       <div class="breadcrumbs">
         <ol class="breadcrumb">
           <li><a href="#">Home</a></li>
-          <li class="active">Order Details</li>
+          <li class="active">Details commande</li>
         </ol>
       </div>
       <div class="row">
@@ -47,7 +47,7 @@ $singlecustomer = $customer->single_customer($customerid);
     <div class="col-md-6 pull-right">
     <div class="col-md-10 col-lg-12 col-sm-8">
     <input type="hidden" value="<?php echo $res->AUTO; ?>" id="ORDEREDNUM" name="ORDEREDNUM">
-      Order Number :<?php echo $res->AUTO; ?>
+      Num commande :<?php echo $res->AUTO; ?>
     </div>
     </div>
  </div>
@@ -56,10 +56,10 @@ $singlecustomer = $customer->single_customer($customerid);
               <table class="table table-condensed" id="table">
                 <thead >
                 <tr class="cart_menu"> 
-                  <th style="width:12%; align:center; ">Product</th>
+                  <th style="width:12%; align:center; ">Produit</th>
                   <th >Description</th>
-                  <th style="width:15%; align:center; ">Quantity</th>
-                  <th style="width:15%; align:center; ">Price</th>
+                  <th style="width:15%; align:center; ">Quantite</th>
+                  <th style="width:15%; align:center; ">Prix</th>
                   <th style="width:15%; align:center; ">Total</th>
                   </tr>
                 </thead>
@@ -84,8 +84,8 @@ $singlecustomer = $customer->single_customer($customerid);
                           <td><img src="admin/products/<?php echo $result->IMAGES ?>"  width="50px" height="50px"></td>
                           <td><?php echo $result->PRODESC ; ?></td>
                           <td align="center"><?php echo $_SESSION['gcCart'][$i]['qty']; ?></td>
-                          <td>&#8369 <?php echo  $result->PRODISPRICE ?></td>
-                          <td>&#8369 <output><?php echo $_SESSION['gcCart'][$i]['price']?></output></td>
+                          <td>$ <?php echo  $result->PRODISPRICE ?></td>
+                          <td>$ <output><?php echo $_SESSION['gcCart'][$i]['price']?></output></td>
                         </tr>
               <?php
               $tot +=$_SESSION['gcCart'][$i]['price'];
@@ -101,9 +101,9 @@ $singlecustomer = $customer->single_customer($customerid);
               </table>  
                 <div class="  pull-right">
                   <p align="right">
-                  <div > Total Price :   &#8369 <span id="sum">0.00</span></div>
-                   <div > Delivery Fee : &#8369 <span id="fee">0.00</span></div>
-                   <div> Overall Price : &#8369 <span id="overall"><?php echo $tot ;?></span></div>
+                  <div > Total Prix :   $ <span id="sum">0.00</span></div>
+                   <div > Frais de livraison : $ <span id="fee">0.00</span></div>
+                   <div> Prix global : $ <span id="overall"><?php echo $tot ;?></span></div>
                    <input type="hidden" name="alltot" id="alltot" value="<?php echo $tot ;?>"/>
                   </p>  
                 </div>
@@ -115,14 +115,14 @@ $singlecustomer = $customer->single_customer($customerid);
  <section id="do_action">
     <div class="container">
       <div class="heading">
-        <h3>What would you like to do next?</h3>
-        <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
+        <h3>Qu’aimeriez-vous faire ensuite?</h3>
+        <p>Choisissez si vous avez un code de réduction ou des points de récompense que vous souhaitez utiliser ou si vous souhaitez estimer vos frais de livraison.</p>
       </div>
       <div class="row">
          <div class="row">
                    <div class="col-md-7">
               <div class="form-group">
-                  <label> Payment Method : </label> 
+                  <label> Methode de paiement : </label> 
                   <div class="radio" >
                       <label >
                           <input type="radio"  class="paymethod" name="paymethod" id="deliveryfee" value="Cash on Delivery" checked="true" data-toggle="collapse"  data-parent="#accordion" data-target="#collapseOne" >Cash on Delivery 
@@ -133,7 +133,7 @@ $singlecustomer = $customer->single_customer($customerid);
                         <div class="panel"> 
                                 <div class="panel-body">
                                     <div class="form-group ">
-                                      <label>Address where to deliver</label>
+                                      <label>Adresse où livrer</label>
 
                                     
                                         <div class="col-md-12">
@@ -142,7 +142,7 @@ $singlecustomer = $customer->single_customer($customerid);
 
                                           <div class="col-md-8">
                                            <select class="form-control paymethod" name="PLACE" id="PLACE" onchange="validatedate()"> 
-                                           <option value="0" >Select</option>
+                                           <option value="0" >Selecte</option>
                                               <?php 
                                             $query = "SELECT * FROM `tblsetting` ";
                                             $mydb->setQuery($query);

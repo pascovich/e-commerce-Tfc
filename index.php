@@ -35,21 +35,21 @@ switch ($view) {
 	case 'orderdetails' :  
 
          If(!isset($_SESSION['orderdetails'])){
-         $_SESSION['orderdetails'] = "Order Details";
+         $_SESSION['orderdetails'] = " Details commande";
 		} 
 		$content='customer/orderdetails.php';	
 
 
 	if( isset($_SESSION['orderdetails'])){
       if (@count($_SESSION['orderdetails'])>0){
-        	$title = 'Cart List' . '| <a href="">Order Details</a>';
+        	$title = 'Cart List' . '| <a href="">Details commande</a>';
 		      }
 		    } 
 		break;
 
 	case 'billing' : 	
 	 If(!isset($_SESSION['billingdetails'])){
-         $_SESSION['billingdetails'] = "Order Details";
+         $_SESSION['billingdetails'] = "Details commande";
 		} 
 		$content='customer/customerbilling.php';	
 		if( isset($_SESSION['billingdetails'])){

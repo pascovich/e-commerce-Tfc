@@ -80,12 +80,12 @@ if (isset($_SESSION['gcCart'])){
           <div class="col-md-8 clearfix">
             <div class="shop-menu clearfix pull-right">
               <ul class="nav navbar-nav">     
-                <li><a href="<?php echo web_root;?>index.php?q=cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                <li><a href="<?php echo web_root;?>index.php?q=cart"><i class="fa fa-shopping-cart"></i> Pagnet</a></li>
                 <?php if (isset($_SESSION['CUSID'] )) { ?>  
-                  <li><a href="<?php echo web_root?>index.php?q=profile"><i class="fa fa-user"></i> Account</a></li>     
-                  <li><a   href="<?php echo web_root?>logout.php"><i class="fa fa-lock"></i> Logout</a></li>
+                  <li><a href="<?php echo web_root?>index.php?q=profile"><i class="fa fa-user"></i> Compte</a></li>     
+                  <li><a   href="<?php echo web_root?>logout.php"><i class="fa fa-lock"></i> Deconnexion</a></li>
                 <?php }else{ ?> 
-                <li><a data-target="#smyModal" data-toggle="modal"  href=""><i class="fa fa-lock"></i> Login</a></li>
+                <li><a data-target="#smyModal" data-toggle="modal"  href=""><i class="fa fa-lock"></i> Connnexion</a></li>
               <?php } ?>
               </ul>
             </div>
@@ -109,7 +109,7 @@ if (isset($_SESSION['gcCart'])){
             <div class="mainmenu pull-left">
               <ul class="nav navbar-nav collapse navbar-collapse">
                 <li><a href="<?php echo web_root;?>" class="active">Home</a></li>
-                <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+                <li class="dropdown"><a href="#">Categorie<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                        <?php 
                                             $mydb->setQuery("SELECT * FROM `tblcategory`");
@@ -121,8 +121,8 @@ if (isset($_SESSION['gcCart'])){
                                 </li> 
 
          
-                <li><a href="<?php web_root?>index.php?q=product">Products</a></li>
-                <li><a href="<?php web_root?>index.php?q=contact">Contact</a></li>
+                <li><a href="<?php web_root?>index.php?q=product">Produits</a></li>
+                <!-- <li><a href="<?php web_root?>index.php?q=contact">Contact</a></li> -->
               </ul>
             </div>
           </div>
@@ -148,111 +148,14 @@ if (isset($_SESSION['gcCart'])){
          ?> 
 
 
-
-
-
     <footer id="footer"><!--Footer-->
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-2">
-            <div class="companyinfo">
-              <h2><span>e</span>-shopper</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
-            </div>
-          </div>
-          <div class="col-sm-7">
-            <div class="col-sm-6">
-              <div class="video-gallery text-center">
-                <a href="#"> 
-                    <iframe class="iframe-img"  src="https://www.youtube.com/embed/d8N21Q_UN4w"   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-                </a> 
-              </div>
-            </div>
-            
-            <div class="col-sm-6">
-              <div class="video-gallery text-center">
-                <a href="#"> 
-                   <iframe  class="iframe-img"  src="https://www.youtube.com/embed/aMDC3Da4KIA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-                </a> 
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="address">
-              <img src="images/home/map.png" alt="" />
-              <p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     
-    <div class="footer-widget">
-      <div class="container">
-        <p>You can modify this section using your own personal information</p>
-        <div class="row">
-          <div class="col-sm-3">
-            <div class="single-widget">
-              <h2>Service</h2>
-              <ul class="nav nav-pills nav-stacked">
-                <li><a href="#">Online Help</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Order Status</a></li>
-                <li><a href="#">Change Location</a></li>
-                <li><a href="#">FAQ’s</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="single-widget">
-              <h2>Quick Shop</h2>
-              <ul class="nav nav-pills nav-stacked">
-                 <?php 
-                      $mydb->setQuery("SELECT * FROM `tblcategory` LIMIT 6");
-                      $cur = $mydb->loadResultList();
-                     foreach ($cur as $result) {
-                      echo '<li><a href="index.php?q=product&category='.$result->CATEGORIES.'" >'.$result->CATEGORIES.'</a></li>';
-                      }
-                  ?>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="single-widget">
-              <h2>Policies</h2>
-              <ul class="nav nav-pills nav-stacked">
-                <li><a href="#">Terms of Use</a></li>
-                <li><a href="#">Privecy Policy</a></li>
-                <li><a href="https://youtu.be/9hcCHTwW3HA">HR Record System</a></li>
-                <li><a href="https://youtu.be/aMDC3Da4KIA">Point of Sales</a></li>
-                <li><a href="https://youtu.be/d8N21Q_UN4w">Resevation System</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="single-widget">
-              <h2>About Shopper</h2>
-              <ul class="nav nav-pills nav-stacked">
-                <li><a href="#">Company Information</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Store Location</a></li>
-                <li><a href="#">Affillate Program</a></li>
-                <li><a href="#">Copyright</a></li>
-              </ul>
-            </div>
-          </div>
-      
-          
-        </div>
-      </div>
-    </div>
     
     <div class="footer-bottom">
       <div class="container">
         <div class="row">
-          <p class="pull-left">Modified by <span><a href="https://bit.ly/2LPn9Wu">Janobe Source Code</a></span></p>
-          <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+          <!-- <p class="pull-left">Modified by <span><a href="https://bit.ly/2LPn9Wu">Janobe Source Code</a></span></p> -->
+          <p class="pull-right">Designed by <span><a target="_blank" href="#">Fahamu de Dieu </a></span></p>
         </div>
       </div>
     </div>

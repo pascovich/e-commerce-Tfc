@@ -87,11 +87,11 @@ $query = "SELECT * FROM `tblsummary` s ,`tblcustomer` c
 			 
 		
 ?>
- 	 <h4>Your order has been confirmed and ready for Pick Up</h4><br/>
-		<h5>DEAR Ma'am/Sir ,</h5>
-		<h5>As you have ordered cash on pick up, please have the exact amount of cash to pay to our staff and bring this billing details.</h5>
+ 	 <h4>Votre commande a été confirmée et prête à être ramassée</h4><br/>
+		<h5>MES/Monsieur. ,</h5>
+		<h5>Comme vous avez commandé de l’argent comptant lors du ramassage, veuillez avoir le montant exact en espèces à payer à notre personnel et apporter ces détails de facturation.</h5>
 		 <hr/>
-		 <h4><strong>Pick up Information</strong></h4>
+		 <h4><strong>Récupérer des informations</strong></h4>
 		 <div class="row">
 		 	<!-- <div class="col-md-6">
 		 		<p> ORDER NUMBER : <?php echo $_SESSION['ordernumber']; ?></p>
@@ -104,8 +104,8 @@ $query = "SELECT * FROM `tblsummary` s ,`tblcustomer` c
 		 		foreach ( $res as $row) echo $row->countitem; ?></p> 
 		 	</div> -->
 		 	<div class="col-md-6">
-		 	<p>Name : <?php echo $cur->FNAME . ' '.  $cur->LNAME ;?></p>
-		 	<p>Address : <?php echo $cur->CUSHOMENUM . ' ' . $cur->STREETADD . ' ' .$cur->BRGYADD . ' ' . $cur->CITYADD . ' ' .$cur->PROVINCE . ' ' .$cur->COUNTRY; ?></p>
+		 	<p>Nom : <?php echo $cur->FNAME . ' '.  $cur->LNAME ;?></p>
+		 	<p>Addresse : <?php echo $cur->CUSHOMENUM . ' ' . $cur->STREETADD . ' ' .$cur->BRGYADD . ' ' . $cur->CITYADD . ' ' .$cur->PROVINCE . ' ' .$cur->COUNTRY; ?></p>
 		 		<!-- <p>Contact Number : <?php echo $cur->CONTACTNUMBER;?></p> -->
 		 	</div>
 		 </div>
@@ -113,26 +113,26 @@ $query = "SELECT * FROM `tblsummary` s ,`tblcustomer` c
 }elseif ($cur->PAYMENTMETHOD=="Cash on Delivery"){
 		 
 ?>
- 	 <h4>Your order has been confirmed and delivered</h4><br/>
- 		<h5>DEAR Ma'am/Sir ,</h5>
-		<h5>Your order is on its way! As you have ordered via Cash on Delivery, please have the exact amount of cash for our deliverer.	</h5>
+ 	 <h4>>Votre commande a été confirmée et prête à être ramassée</h4><br/>
+ 		<h5>MES/Monsieur. ,</h5>
+		<h5>Comme vous avez commandé de l’argent comptant lors du ramassage, veuillez avoir le montant exact en espèces à payer à notre personnel et apporter ces détails de facturation.	</h5>
 		 <hr/>
-		 <h4><strong>Delivery Information</strong></h4>
+		 <h4><strong>Récupérer des informations</strong></h4>
 		 <div class="row">
 		 	<div class="col-md-6">
-		 		<p> ORDER NUMBER : <?php echo $_SESSION['ordernumber']; ?></p>
+		 		<p> N° COMMANDE : <?php echo $_SESSION['ordernumber']; ?></p>
 
 		 			<?php 
 		 			$query="SELECT sum(ORDEREDQTY) as 'countitem' FROM `tblorder` WHERE `ORDEREDNUM`='".$_SESSION['ordernumber']."'";
 		 			$mydb->setQuery($query);
 					$res = $mydb->loadResultList();
 					?>
-		 		<p>Items to be delivered : <?php
+		 		<p>Articles à livrer: <?php
 		 		foreach ( $res as $row) echo $row->countitem; ?></p> 
 
 		 	</div>
 		 	<div class="col-md-6">
-		 	<p>Name : <?php echo $cur->FNAME . ' '.  $cur->LNAME ;?></p>
+		 	<p>Nom : <?php echo $cur->FNAME . ' '.  $cur->LNAME ;?></p>
 		 	<!-- <p>Address : <?php echo $cur->ADDRESS;?></p> -->
 		 		<!-- <p>Contact Number : <?php echo $cur->CONTACTNUMBER;?></p> -->
 		 	</div>
@@ -141,23 +141,23 @@ $query = "SELECT * FROM `tblsummary` s ,`tblcustomer` c
 }
 }elseif($cur->ORDEREDSTATS=='Cancelled'){
 
-	 echo "Your order has been cancelled due to lack of communication and incomplete information.";
+	 echo "Votre commande a été annulée en raison d’un manque de communication et d’informations incomplètes.";
 
 }else{
-	echo "<h5>Your order is on process. Please check your profile for notification of confirmation.</h5>";
+	echo "<h5>Votre commande est en cours de traitement. Veuillez vérifier votre profil pour la notification de confirmation.</h5>";
 } 
 ?>
 <hr/>
- <h4><strong>Order Information</strong></h4>
+ <h4><strong>Commande Information</strong></h4>
 		<table id="table" class="table">
 			<thead>
 				<tr>
 					<!-- <th>PRODUCT</th>? -->
-					<th>PRODUCT</th>
+					<th>PRODUIT</th>
 					<!-- <th>DATE ORDER</th>  -->
-					<th>PRICE</th>
-					<th>QUANTITY</th>
-					<th>TOTAL PRICE</th>
+					<th>PRIX</th>
+					<th>QUANTITE</th>
+					<th>TOTAL PRIX</th>
 					<th></th> 
 				</tr>
 				</thead>
@@ -181,10 +181,10 @@ $query = "SELECT * FROM `tblsummary` s ,`tblcustomer` c
 				  		// echo '<td>'. $result->FIRSTNAME.' '. $result->LASTNAME.'</td>';
 				  		echo '<td>'. $result->PRODESC.'</td>';
 				  		// echo '<td>'.date_format(date_create($result->ORDEREDDATE),"M/d/Y h:i:s").'</td>';
-				  		echo '<td> &#8369 '. number_format($result->PROPRICE,2).' </td>';
+				  		echo '<td> $ '. number_format($result->PROPRICE,2).' </td>';
 				  		echo '<td align="center" >'. $result->ORDEREDQTY.'</td>';
 				  		?>
-				  		 <td> &#8369 <output><?php echo  number_format($result->ORDEREDPRICE,2); ?></output></td> 
+				  		 <td> $ <output><?php echo  number_format($result->ORDEREDPRICE,2); ?></output></td> 
 				  		<?php
 				  		
 				  		// echo '<td id="status" >'. $result->STATS.'</td>';
@@ -220,14 +220,14 @@ $query = "SELECT * FROM `tblsummary` s ,`tblcustomer` c
        </table> <hr/>
  		<div class="row">
 		  	<div class="col-md-6 pull-left">
-		  	 <div>Ordered Date : <?php echo date_format(date_create($cur->ORDEREDDATE),"M/d/Y h:i:s"); ?></div> 
-		  		<div>Payment Method : <?php echo $cur->PAYMENTMETHOD; ?></div>
+		  	 <div>Date commande : <?php echo date_format(date_create($cur->ORDEREDDATE),"M/d/Y h:i:s"); ?></div> 
+		  		<div>Methode de paiement : <?php echo $cur->PAYMENTMETHOD; ?></div>
 
 		  	</div>
 		  	<div class="col-md-6 pull-right">
-		  		<p align="right">Total Price : &#8369 <?php echo number_format($subtot,2);?></p>
-		  		<p align="right">Delivery Fee : &#8369 <?php echo number_format($price,2); ?></p>
-		  		<p align="right">Overall Price : &#8369 <?php echo number_format($cur->PAYMENT,2); ?></p>
+		  		<p align="right">Prix total : $ <?php echo number_format($subtot,2);?></p>
+		  		<p align="right">Frais de livraison : $ <?php echo number_format($price,2); ?></p>
+		  		<p align="right">Prix global : $ <?php echo number_format($cur->PAYMENT,2); ?></p>
 		  	</div>
 		  </div>
 		 
@@ -236,10 +236,10 @@ $query = "SELECT * FROM `tblsummary` s ,`tblcustomer` c
 		  ?>
 		   <hr/> 
 		  <div class="row">
-		 		 <p>Please print this as a proof of purchased</p><br/>
-		  	  <p>We hope you enjoy your purchased products. Have a nice day!</p>
-		  	  <p>Sincerely.</p>
-		  	  <h4><a href="https://bit.ly/2LPn9Wu">Janobe Source Code</a></h4>
+		 		 <p>S’il vous plaît imprimer ceci comme une preuve d’achat</p><br/>
+		  	  <p>Nous espérons que vous apprécierez vos produits achetés. Bonne journée!</p>
+		  	  <p>Sincèrement.</p>
+		  	  <h4><a href="#">Fahamu de Dieu</a></h4>
 		  </div>
 		  <?php }?>
   </div> 

@@ -1,7 +1,7 @@
  <section id="advertisement">
-    <div class="container">
+    <!-- <div class="container">
       <img src="images/shop/advertisement.jpg" alt="" />
-    </div>
+    </div> -->
   </section>
   
   <section>
@@ -13,7 +13,7 @@
         
         <div class="col-sm-9 padding-right">
           <div class="features_items"><!--features_items-->
-            <h2 class="title text-center">Products</h2>
+            <h2 class="title text-center">Produits</h2>
               <?php
              if(isset($_POST['search'])) { 
                 $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
@@ -48,15 +48,15 @@
                 <div class="single-products">
                     <div class="productinfo text-center">
                       <img src="<?php  echo web_root.'admin/products/'. $result->IMAGES; ?>" alt="" />
-                      <h2>&#8369 <?php  echo $result->PRODISPRICE; ?></h2>
+                      <h2>$ <?php  echo $result->PRODISPRICE; ?></h2>
                       <p><?php  echo    $result->PRODESC; ?></p>
-                      <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                      <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Ajouter au pagnet</button>
                     </div>
                     <div class="product-overlay">
                       <div class="overlay-content">
-                        <h2>&#8369 <?php  echo $result->PRODISPRICE; ?></h2>
+                        <h2>$ <?php  echo $result->PRODISPRICE; ?></h2>
                         <p><?php  echo    $result->PRODESC; ?></p>
-                        <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                        <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Ajouter au pagnet</button>
                       </div>
                     </div>
                 </div>
@@ -66,11 +66,11 @@
                               <?php     
                             if (isset($_SESSION['CUSID'])){  
 
-                              echo ' <a href="'.web_root. 'customer/controller.php?action=addwish&proid='.$result->PROID.'" title="Add to wishlist"><i class="fa fa-plus-square"></i>Add to wishlist</a></a>
+                              echo ' <a href="'.web_root. 'customer/controller.php?action=addwish&proid='.$result->PROID.'" title="Add to wishlist"><i class="fa fa-plus-square"></i>Ajouter au wishlist</a></a>
                             ';
 
                              }else{
-                               echo   '<a href="#" title="Add to wishlist" class="proid"  data-target="#smyModal" data-toggle="modal" data-id="'.  $result->PROID.'"><i class="fa fa-plus-square"></i>Add to wishlist</a></a>
+                               echo   '<a href="#" title="Add to wishlist" class="proid"  data-target="#smyModal" data-toggle="modal" data-id="'.  $result->PROID.'"><i class="fa fa-plus-square"></i>Ajouter au wishlist</a></a>
                             ';
                             }  
                             ?>
@@ -86,7 +86,7 @@
 
             }else{ 
 
-              echo '<h1>No Products Available</h1>';
+              echo '<h1>No Produits Disponible</h1>';
 
             }?> 
           </div><!--features_items-->

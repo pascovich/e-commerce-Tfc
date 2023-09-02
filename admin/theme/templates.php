@@ -114,7 +114,7 @@ $singleuser = $user->single_user($_SESSION['USERID']);
 
                       <div class="divtxt">
                         <li><a href="<?php echo web_root; ?>admin/user/index.php?view=edit&id=<?php echo $_SESSION['USERID']; ?>"> <?php echo $_SESSION['U_NAME']; ?> </a>
-                      <li><a title="Edit" href="<?php echo web_root; ?>admin/user/index.php?view=edit&id=<?php echo $_SESSION['USERID']; ?>"  >Editer Mon Profile</a>
+                      <li><a title="Edit" href="<?php echo web_root; ?>admin/user/index.php?view=edit&id=<?php echo $_SESSION['USERID']; ?>"  >Editer Profile</a>
                                     
                         </li>
                           </li>

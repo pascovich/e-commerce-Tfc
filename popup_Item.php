@@ -48,13 +48,13 @@ $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
                 <ul>
                  <!--    <li>Model - <?php echo $result->PROMODEL; ?></li> -->
                     <li>Type - <?php echo $result->PRODESC; ?></li>
-                    <li>Price - &#8369 <?php echo $result->PROPRICE; ?></li> 
-                    <li>Discount - <?php echo $result->PRODISCOUNT; ?> % </li> 
-                    <li>Discounted Price - &#8369 <?php echo $result->PRODISPRICE; ?> </li> 
-                    <li>Available Quantity - <?php echo $result->PROQTY; ?></li>
+                    <li>Prix - $ <?php echo $result->PROPRICE; ?></li> 
+                    <li>Remise - <?php echo $result->PRODISCOUNT; ?> % </li> 
+                    <li>Prix de remise - $ <?php echo $result->PRODISPRICE; ?> </li> 
+                    <li>Quantite disponible - <?php echo $result->PROQTY; ?></li>
                 </ul>
 
-                 <button  type="submit"  class="btn btn-pup btn-sm"  name="btnorder">Order Now!</button>
+                 <button  type="submit"  class="btn btn-pup btn-sm"  name="btnorder">Commande Now!</button>
             </div>
     
         </div>
