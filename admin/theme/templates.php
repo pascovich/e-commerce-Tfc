@@ -53,6 +53,18 @@
     }else{
         $order = '<span> ('.$res.')</span>';
     }
+
+    $query1 = "SELECT * FROM tblsummary WHERE tblcustomer ";
+    $mydb->setQuery($query1);
+    $cur1 = $mydb->executeQuery();
+    $rowscount1 = $mydb->num_rows($cur);
+    $res1 = isset($rowscount1)? $rowscount1 : 0;
+
+    if($res1>0){
+    $client = '<span style="color:blue;">('.$res1.')</span>';
+    }else{
+        $client = '<span> ('.$res1.')</span>';
+    }
 ?>
       
 <body>
@@ -139,6 +151,10 @@ $singleuser = $user->single_user($_SESSION['USERID']);
                             <a href="<?php echo web_root; ?>admin/index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li> -->
                       
+                        <li>
+                             <a href="<?php echo web_root; ?>admin/client/index.php"><i class="fa fa-user fa-fw"></i>Clients <?php echo $client; ?></a>
+           
+                        </li>
                         <li>
                              <a href="<?php echo web_root; ?>admin/products/index.php"><i class="fa fa-barcode fa-fw"></i>Produits </a>
            

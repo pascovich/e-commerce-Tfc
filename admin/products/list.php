@@ -4,8 +4,10 @@
 		 
 		<div class="row">
        	 <div class="col-lg-12">
-            <h1 class="page-header">Liste de nos produits  <a href="index.php?view=add" class="btn btn-primary btn-xs  ">  <i class="fa fa-plus-circle fw-fa"></i> New</a>  </h1>
-       		</div>
+            <h1 class="page-header"> <a href="<?php echo web_root; ?>admin/report/print/rpt_produit.php" target="_blank" rel="noopener noreferrer"> Liste de nos produits  </a>
+              <a href="index.php?view=add" class="btn btn-primary btn-xs  ">  <i class="fa fa-plus-circle fw-fa"></i> New</a>  </h1>
+			
+			   </div>
         	<!-- /.col-lg-12 -->
    		 </div>
 			    <form action="controller.php?action=delete" Method="POST">  	

@@ -126,7 +126,7 @@
 		<thead>
 			<tr bgcolor="skyblue" style="font-weight: bold;"> 
 				<td >Date commande</td>  
-				<!-- <td >Customer</td> -->
+				<td >Customer</td>
 				<td >Produit</td>
 				<td >Prix original</td>
 				<td >Prix</td>
@@ -176,6 +176,7 @@ AND DATE(ORDEREDDATE) <= '". date_format(date_create($_POST['date_pickerto']),'Y
 				  				$AMOUNT = $result->PROPRICE * $result->QTY ;
 							echo '<tr>
 									<td>'.date_format(date_create($result->ORDEREDDATE),'M/d/Y h:i:s').'</td>   
+									<td>'.$result->FNAME.' '.$result->LNAME.'</td>
 									<td>'.$result->PRODESC.'</td>
 									<td>'.$result->ORIGINALPRICE.'</td>
 									<td>'.$result->PROPRICE.'</td>
@@ -201,7 +202,7 @@ AND DATE(ORDEREDDATE) <= '". date_format(date_create($_POST['date_pickerto']),'Y
 </tbody>
 <tfoot>
 	<tr>
-		<td colspan="2">Total</td>
+		<td colspan="3">Total</td>
 		<td><?php echo $Capital; ?></td>
 		<td><?php echo $markupPrice; ?></td>
 		<td><?php echo $totQty; ?></td>
@@ -215,7 +216,7 @@ AND DATE(ORDEREDDATE) <= '". date_format(date_create($_POST['date_pickerto']),'Y
 	<div class="row">
 		<div class="col-md-12">
 			<div class="col-md-2"> 	
-			<button onclick="tablePrint();" class="btn btn-primary"><i class="fa fa-print"></i>Imprimer rapport</button>
+			<button onclick="tablePrint();" class="btn btn-primary"><i class="fa fa-print"></i>Imprimer le rapport</button>
  		</div>
 	  </div>
 	</div>
@@ -223,6 +224,26 @@ AND DATE(ORDEREDDATE) <= '". date_format(date_create($_POST['date_pickerto']),'Y
    
 <script>
 function tablePrint(){  
+    var display_setting="toolbar=no,location=no,directories=no,menubar=no,";  
+    display_setting+="scrollbars=no,width=500, height=500, left=100, top=25";  
+    var content_innerhtml = document.getElementById("printout").innerHTML;  
+    var document_print=window.open("","",display_setting);  
+    document_print.document.open();  
+    document_print.document.write('<body style="font-family:Calibri(body);  font-size:8px;" onLoad="self.print();self.close();" >');  
+    document_print.document.write(content_innerhtml);  
+    document_print.document.write('</body></html>');  
+    document_print.print();  
+    document_print.document.close();  
+    return false;  
+    } 
+	$(document).ready(function() {
+		oTable = jQuery('#list').dataTable({
+		"bJQueryUI": true,
+		"sPaginationType": "full_numbers"
+		} );
+	});	
+
+	function LivraisonPrint(){  
     var display_setting="toolbar=no,location=no,directories=no,menubar=no,";  
     display_setting+="scrollbars=no,width=500, height=500, left=100, top=25";  
     var content_innerhtml = document.getElementById("printout").innerHTML;  

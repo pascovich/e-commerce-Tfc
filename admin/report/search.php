@@ -74,7 +74,7 @@ if(isset($_POST['submit'])){
 		}
 
 	}else{
-			echo '<tr><td colspan="7" align="center"><h2>Please Enter Then Dates</h2></td></tr>';
+			echo '<tr><td colspan="7" align="center"><h2>Please Entrer les Dates</h2></td></tr>';
 
 	}
 		 
@@ -90,7 +90,7 @@ if(isset($_POST['submit'])){
 </tfoot>
 </table>
 </span>
-<button onclick="tablePrint();" class="btn btn_fixnmix"><span class="glyphicon glyphicon-print"></span>Imprimer rapport</button>
+<button onclick="tablePrint();" class="btn btn_fixnmix"><span class="glyphicon glyphicon-print"></span>Imprimer le rapport</button>
  
 </form>
 </div>
