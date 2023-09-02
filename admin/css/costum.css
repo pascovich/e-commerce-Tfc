@@ -1,0 +1,132 @@
+.col-modal{
+	margin-left: 0;
+	width: 25%;
+	margin-right: 0;
+}
+.col-modal-half{
+	width: 50%;
+	margin-left: 0;
+}
+.col-head { 
+	margin-left: 0;
+	width: 25%;
+	margin-right: 0;
+ 
+} 
+/* .dropdown-acnt {
+    width: 250px;
+    min-width: 0;
+    margin-left: 0;
+}
+*/
+ 
+ 
+.divtxt {
+	text-decoration: none;
+	margin-top: 3px;
+	margin-left: 33%; 
+	position: inherit;
+	 width:150px;
+ 	 height: 80px;
+ 	 float: left;
+
+ }
+ .divtxt a:hover{
+ 	color: black;
+ 	text-decoration: none;
+ }
+ 
+.divpic {
+ 	 width: 70px;
+ 	 height: 80px;
+ 	 float: left;
+ 	 margin-left: 0;
+ 	 margin-top: 3px;
+ }
+
+@media(min-width:768px) {
+    .divpic {
+        z-index: 0;
+        position: none;
+        width: 0px;
+        margin-top: 0px;
+    }
+ 
+}
+.btn-pup {
+  color: #ffffff;
+  background-color: #6a2c28;
+  border-color: #977b7a;
+}
+
+.btn-pup:hover,
+.btn-pup:focus,
+.btn-pup:active,
+.btn-pup.active,
+.open .dropdown-toggle.btn-pup {
+  color: #ffffff;
+  background-color: #986464;
+  border-color: #977b7a;
+}
+
+.btn-pup:active,
+.btn-pup.active,
+.open .dropdown-toggle.btn-pup {
+  background-image: none;
+}
+
+.btn-pup.disabled,
+.btn-pup[disabled],
+fieldset[disabled] .btn-pup,
+.btn-pup.disabled:hover,
+.btn-pup[disabled]:hover,
+fieldset[disabled] .btn-pup:hover,
+.btn-pup.disabled:focus,
+.btn-pup[disabled]:focus,
+fieldset[disabled] .btn-pup:focus,
+.btn-pup.disabled:active,
+.btn-pup[disabled]:active,
+fieldset[disabled] .btn-pup:active,
+.btn-pup.disabled.active,
+.btn-pup[disabled].active,
+fieldset[disabled] .btn-pup.active {
+  background-color: #6a2c28;
+  border-color: #977b7a;
+}
+
+
+.panel-pup {
+  border-color: #6a2c28;
+}
+
+.panel-pup > .panel-heading {
+  color: #ffffff;
+  background-color: #6a2c28;
+  border-color: #6a2c28;
+}
+
+.panel-pup > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #6a2c28;
+}
+
+.panel-pup > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #6a2c28;
+}
+.nav-pills > li {
+  float: left;
+}
+
+.nav-pills > li > a {
+  border-radius: 5px;
+}
+
+.nav-pills > li + li {
+  margin-left: 2px;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  color: #ffffff;
+  background-color: #6a2c28;
+}
