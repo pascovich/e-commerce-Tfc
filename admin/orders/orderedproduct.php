@@ -36,7 +36,7 @@ if (isset($_POST['ordernumber'])){
 
 
 $query = "SELECT * FROM `tblsummary` s ,`tblcustomer` c 
-				WHERE   s.`CUSTOMERID`=c.`CUSTOMERID` an ORDEREDNUM=".$_SESSION['ordernumber'];
+				WHERE   s.`CUSTOMERID`=c.`CUSTOMERID` and ORDEREDNUM=".$_SESSION['ordernumber'];
 		$mydb->setQuery($query);
 		$cur = $mydb->loadSingleResult();
 

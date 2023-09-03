@@ -53,7 +53,7 @@
 				  		echo '<td >'.$result->PAYMENTMETHOD .'</td>';
 				  		// echo '<td></td>';
 				  		echo '<td >'. $result->ORDEREDSTATS.'</td>';
-				  		if($result->ORDEREDSTATS=='Pending'){
+				  		if($result->ORDEREDSTATS=='en attente'){
 				  				echo '<td><a href="controller.php?action=edit&id='.$result->ORDEREDNUM.'&customerid='.$result->CUSTOMERID.'&actions=cancel" class="btn btn-danger btn-xs">Cancel</a>
 				  				<a href="controller.php?action=edit&id='.$result->ORDEREDNUM.'&customerid='.$result->CUSTOMERID.'&actions=confirm"  class="btn btn-primary btn-xs">Confirm</a></td>';
 			  	 		}elseif($result->ORDEREDSTATS=='Confirmed'){

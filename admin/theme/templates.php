@@ -42,7 +42,7 @@
   ?> 
 
   <?php
-    $query = "SELECT * FROM tblsummary WHERE ORDEREDSTATS = 'Pending'";
+    $query = "SELECT * FROM tblsummary WHERE ORDEREDSTATS = 'en attente'";
     $mydb->setQuery($query);
     $cur = $mydb->executeQuery();
     $rowscount = $mydb->num_rows($cur);
