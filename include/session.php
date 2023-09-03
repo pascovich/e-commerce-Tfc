@@ -159,7 +159,7 @@ function product_exists($pid){
     for($i=0;$i<$max;$i++){
       if($pid==$_SESSION['gcCart'][$i]['productid']){
         $flag=1;
-        message("Item is already in the cart.","error");
+        message("ce item  est deja dans le panier.","error");
         break;
       }
     }
@@ -190,7 +190,7 @@ function product_exists($pid){
       $_SESSION['gcCart'][0]['price']=$price;
 }
 	
-         message("1 Item added in the cart.","success");
+         message("1 Item ajouter au panier.","success");
 }
   function removetocart($pid){
 		$pid=intval($pid);
@@ -276,12 +276,12 @@ switch ($setheader) {
       echo  $title="Profile";  
     break;
   case 'orderdetails' : 
-    echo $title = "Cart List/Order Details";
+    echo $title = " Liste Panier/Details Commande";
  
      break;
 
   case 'billing' :   
-      echo $title = "Cart List/Order Details/Billing Details";
+      echo $title = "Liste Panier/Details Commande/Details Facturation";
     break;
 
   case 'contact' :

@@ -69,12 +69,14 @@ if (isset($_SESSION['gcCart'])){
       </div>
     </div><!--/header_top-->
     
+
+    
     <div class="header-middle"><!--header-middle-->
       <div class="container">
         <div class="row">
           <div class="col-md-4 clearfix">
             <div class="logo pull-left">
-              <a href="<?php echo web_root?>"><img src="images/home/logo.png" alt="" /></a>
+              <a href="<?php echo web_root?>"><img width="25%" src="images/home/jibu.jfif" alt="" /></a>
             </div> 
           </div>
           <div class="col-md-8 clearfix">

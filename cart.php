@@ -3,7 +3,7 @@
       <div class="breadcrumbs">
         <ol class="breadcrumb">
           <li><a href="#">Home</a></li>
-          <li class="active">Pagnet</li>
+          <li class="active">Panier</li>
         </ol>
       </div>
       <div class="table-responsive cart_info"> 

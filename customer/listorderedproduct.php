@@ -113,9 +113,10 @@ $query = "SELECT * FROM `tblsummary` s ,`tblcustomer` c
 }elseif ($cur->PAYMENTMETHOD=="Cash on Delivery"){
 		 
 ?>
- 	 <h4>>Votre commande a été confirmée et prête à être ramassée</h4><br/>
+ 	 <h4>Votre commande a été confirmée et prête à être livrer tenez bon</h4><br/>
  		<h5>MES/Monsieur. ,</h5>
-		<h5>Comme vous avez commandé de l’argent comptant lors du ramassage, veuillez avoir le montant exact en espèces à payer à notre personnel et apporter ces détails de facturation.	</h5>
+		<h5>Comme vous avez commandé, veuillez avoir le montant exact en espèces à payer à notre personnel et
+			 apporter ces détails de facturation.	</h5>
 		 <hr/>
 		 <h4><strong>Récupérer des informations</strong></h4>
 		 <div class="row">

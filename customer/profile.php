@@ -129,12 +129,12 @@
                                                 data-target="#myOrdered"
                                                 data-toggle="modal" href="#"
                                                 title=
-                                                "View list Of ordered products">
+                                                "Voir la liste des produits commandes">
                                                 <i class=
                                                 "fa fa-info-circle fa-fw"
                                                 data-placement="left"
                                                 data-toggle="tooltip" title=
-                                                "View Order"></i> <span class=
+                                                "Voir commande"></i> <span class=
                                                 "tooltip tooltip.top">voir</span></a>
                                             
                                             </td>
